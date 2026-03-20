@@ -16,6 +16,11 @@
 		AA000012AA000012AA000012 /* GameEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000013AA000013AA000013 /* GameEngine.swift */; };
 		AA000014AA000014AA000014 /* RuleValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000015AA000015AA000015 /* RuleValidatorTests.swift */; };
 		AA000016AA000016AA000016 /* GameEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000017AA000017AA000017 /* GameEngineTests.swift */; };
+		AA000020AA000020AA000020 /* PlayerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000021AA000021AA000021 /* PlayerProtocol.swift */; };
+		AA000022AA000022AA000022 /* EasyAIPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000023AA000023AA000023 /* EasyAIPlayer.swift */; };
+		AA000024AA000024AA000024 /* HardAIPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000025AA000025AA000025 /* HardAIPlayer.swift */; };
+		AA000026AA000026AA000026 /* GamePersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000027AA000027AA000027 /* GamePersistence.swift */; };
+		AA000028AA000028AA000028 /* AIPlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000029AA000029AA000029 /* AIPlayerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +46,11 @@
 		AA000013AA000013AA000013 /* GameEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEngine.swift; sourceTree = "<group>"; };
 		AA000015AA000015AA000015 /* RuleValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleValidatorTests.swift; sourceTree = "<group>"; };
 		AA000017AA000017AA000017 /* GameEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEngineTests.swift; sourceTree = "<group>"; };
+		AA000021AA000021AA000021 /* PlayerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerProtocol.swift; sourceTree = "<group>"; };
+		AA000023AA000023AA000023 /* EasyAIPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyAIPlayer.swift; sourceTree = "<group>"; };
+		AA000025AA000025AA000025 /* HardAIPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardAIPlayer.swift; sourceTree = "<group>"; };
+		AA000027AA000027AA000027 /* GamePersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePersistence.swift; sourceTree = "<group>"; };
+		AA000029AA000029AA000029 /* AIPlayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIPlayerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -60,6 +70,7 @@
 				AA000006AA000006AA000006 /* CardTests.swift */,
 				AA000015AA000015AA000015 /* RuleValidatorTests.swift */,
 				AA000017AA000017AA000017 /* GameEngineTests.swift */,
+				AA000029AA000029AA000029 /* AIPlayerTests.swift */,
 			);
 			path = ShitHeadTests;
 			sourceTree = "<group>";
@@ -71,8 +82,28 @@
 				9706A35B45813D7886770A54 /* ShitHeadApp.swift */,
 				AA000007AA000007AA000007 /* Models */,
 				AA000018AA000018AA000018 /* Engine */,
+				AA000030AA000030AA000030 /* AI */,
+				AA000031AA000031AA000031 /* Persistence */,
 			);
 			path = ShitHead;
+			sourceTree = "<group>";
+		};
+		AA000030AA000030AA000030 /* AI */ = {
+			isa = PBXGroup;
+			children = (
+				AA000021AA000021AA000021 /* PlayerProtocol.swift */,
+				AA000023AA000023AA000023 /* EasyAIPlayer.swift */,
+				AA000025AA000025AA000025 /* HardAIPlayer.swift */,
+			);
+			path = AI;
+			sourceTree = "<group>";
+		};
+		AA000031AA000031AA000031 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				AA000027AA000027AA000027 /* GamePersistence.swift */,
+			);
+			path = Persistence;
 			sourceTree = "<group>";
 		};
 		AA000007AA000007AA000007 /* Models */ = {
@@ -174,6 +205,7 @@
 				AA000005AA000005AA000005 /* CardTests.swift in Sources */,
 				AA000014AA000014AA000014 /* RuleValidatorTests.swift in Sources */,
 				AA000016AA000016AA000016 /* GameEngineTests.swift in Sources */,
+				AA000028AA000028AA000028 /* AIPlayerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,6 +218,10 @@
 				AA000003AA000003AA000003 /* GameState.swift in Sources */,
 				AA000010AA000010AA000010 /* RuleValidator.swift in Sources */,
 				AA000012AA000012AA000012 /* GameEngine.swift in Sources */,
+				AA000020AA000020AA000020 /* PlayerProtocol.swift in Sources */,
+				AA000022AA000022AA000022 /* EasyAIPlayer.swift in Sources */,
+				AA000024AA000024AA000024 /* HardAIPlayer.swift in Sources */,
+				AA000026AA000026AA000026 /* GamePersistence.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
