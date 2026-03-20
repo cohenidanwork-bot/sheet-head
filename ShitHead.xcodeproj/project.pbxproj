@@ -21,6 +21,12 @@
 		AA000024AA000024AA000024 /* HardAIPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000025AA000025AA000025 /* HardAIPlayer.swift */; };
 		AA000026AA000026AA000026 /* GamePersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000027AA000027AA000027 /* GamePersistence.swift */; };
 		AA000028AA000028AA000028 /* AIPlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000029AA000029AA000029 /* AIPlayerTests.swift */; };
+		AA000040AA000040AA000040 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000041AA000041AA000041 /* GameViewModel.swift */; };
+		AA000042AA000042AA000042 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000043AA000043AA000043 /* CardView.swift */; };
+		AA000044AA000044AA000044 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000045AA000045AA000045 /* HomeView.swift */; };
+		AA000046AA000046AA000046 /* SetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000047AA000047AA000047 /* SetupView.swift */; };
+		AA000048AA000048AA000048 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000049AA000049AA000049 /* GameView.swift */; };
+		AA000050AA000050AA000050 /* GameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000051AA000051AA000051 /* GameOverView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +57,12 @@
 		AA000025AA000025AA000025 /* HardAIPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardAIPlayer.swift; sourceTree = "<group>"; };
 		AA000027AA000027AA000027 /* GamePersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePersistence.swift; sourceTree = "<group>"; };
 		AA000029AA000029AA000029 /* AIPlayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIPlayerTests.swift; sourceTree = "<group>"; };
+		AA000041AA000041AA000041 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		AA000043AA000043AA000043 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		AA000045AA000045AA000045 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		AA000047AA000047AA000047 /* SetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupView.swift; sourceTree = "<group>"; };
+		AA000049AA000049AA000049 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		AA000051AA000051AA000051 /* GameOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -84,8 +96,30 @@
 				AA000018AA000018AA000018 /* Engine */,
 				AA000030AA000030AA000030 /* AI */,
 				AA000031AA000031AA000031 /* Persistence */,
+				AA000032AA000032AA000032 /* ViewModels */,
+				AA000033AA000033AA000033 /* Views */,
 			);
 			path = ShitHead;
+			sourceTree = "<group>";
+		};
+		AA000032AA000032AA000032 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				AA000041AA000041AA000041 /* GameViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		AA000033AA000033AA000033 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AA000043AA000043AA000043 /* CardView.swift */,
+				AA000045AA000045AA000045 /* HomeView.swift */,
+				AA000047AA000047AA000047 /* SetupView.swift */,
+				AA000049AA000049AA000049 /* GameView.swift */,
+				AA000051AA000051AA000051 /* GameOverView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		AA000030AA000030AA000030 /* AI */ = {
@@ -222,6 +256,12 @@
 				AA000022AA000022AA000022 /* EasyAIPlayer.swift in Sources */,
 				AA000024AA000024AA000024 /* HardAIPlayer.swift in Sources */,
 				AA000026AA000026AA000026 /* GamePersistence.swift in Sources */,
+				AA000040AA000040AA000040 /* GameViewModel.swift in Sources */,
+				AA000042AA000042AA000042 /* CardView.swift in Sources */,
+				AA000044AA000044AA000044 /* HomeView.swift in Sources */,
+				AA000046AA000046AA000046 /* SetupView.swift in Sources */,
+				AA000048AA000048AA000048 /* GameView.swift in Sources */,
+				AA000050AA000050AA000050 /* GameOverView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
