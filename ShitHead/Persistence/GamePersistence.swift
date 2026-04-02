@@ -1,8 +1,8 @@
-// ShitHead/Persistence/GamePersistence.swift
+// SheetHead/Persistence/GamePersistence.swift
 import Foundation
 
 enum GamePersistence {
-    private static let key = "shithead.savedGame"
+    private static let key = "sheethead.savedGame"
 
     static func save(_ state: GameState) {
         if let data = try? JSONEncoder().encode(state) {

@@ -1,4 +1,4 @@
-// ShitHead/Views/HomeView.swift
+// SheetHead/Views/HomeView.swift — Japanese Mountain Design
 import SwiftUI
 
 struct HomeView: View {
@@ -7,72 +7,125 @@ struct HomeView: View {
 
     var body: some View {
         ZStack {
-            Color(red: 0.13, green: 0.45, blue: 0.25)
+            Color.shParchment.ignoresSafeArea()
+
+            Image("home-screen-bg")
+                .resizable()
+                .scaledToFill()
                 .ignoresSafeArea()
+                .opacity(0.90)
 
-            VStack(spacing: 32) {
+            // Parchment tint overlay so text stays legible
+            LinearGradient(
+                colors: [Color.shParchmentLight.opacity(0.30), Color.shParchmentDeep.opacity(0.55)],
+                startPoint: .top,
+                endPoint: .bottom
+            )
+            .ignoresSafeArea()
+
+            VStack(spacing: 0) {
                 Spacer()
 
-                VStack(spacing: 8) {
-                    Text("💩")
-                        .font(.system(size: 64))
-                    Text("Shit Head")
-                        .font(.system(size: 48, weight: .black, design: .rounded))
-                        .foregroundStyle(.white)
-                        .shadow(color: .black.opacity(0.4), radius: 4)
-                }
+                // Logo block
+                VStack(spacing: 4) {
+                    // Main title
+                    Text("SHEET HEAD")
+                        .font(.custom("ShipporiMincho-ExtraBold", size: 44))
+                        .foregroundStyle(Color.shInk)
+                        .tracking(4)
+                        .shadow(color: Color.shCrimson.opacity(0.25), radius: 0, x: 0, y: 2)
 
-                Spacer()
+                    // Tagline
+                    Text("The Card Game")
+                        .font(.custom("ZenKakuGothicNew-Bold", size: 10))
+                        .foregroundStyle(Color.shInkLight)
+                        .tracking(6)
+                        .textCase(.uppercase)
 
-                VStack(spacing: 16) {
-                    Text("Difficulty")
-                        .font(.headline)
-                        .foregroundStyle(.white.opacity(0.8))
-
-                    Picker("Difficulty", selection: $vm.difficulty) {
-                        Text("Easy").tag(Difficulty.easy)
-                        Text("Hard").tag(Difficulty.hard)
-                    }
-                    .pickerStyle(.segmented)
-                    .padding(.horizontal, 60)
-                }
-
-                Button(action: vm.startNewGame) {
-                    Text("New Game")
-                        .font(.title2.bold())
-                        .foregroundStyle(.white)
-                        .padding(.horizontal, 48)
-                        .padding(.vertical, 16)
-                        .background(
-                            RoundedRectangle(cornerRadius: 14)
-                                .fill(Color.orange)
-                                .shadow(color: .black.opacity(0.3), radius: 6)
+                    // Hanko seal
+                    Text("SH")
+                        .font(.custom("NotoSerifCJKjp-Black", size: 18))
+                        .foregroundStyle(Color.shCrimson)
+                        .frame(width: 44, height: 44)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 4)
+                                .stroke(Color.shCrimson, lineWidth: 2)
                         )
+                        .rotationEffect(.degrees(-8))
+                        .opacity(0.70)
+                        .padding(.top, 10)
                 }
 
-                Button(action: { showInstructions = true }) {
-                    HStack(spacing: 8) {
-                        Image(systemName: "book.fill")
-                        Text("How to Play")
+                Spacer().frame(height: 32)
+
+                // Fanned card backs
+                ZStack {
+                    ForEach(0..<5, id: \.self) { i in
+                        CardBackView(size: .player)
+                            .rotationEffect(.degrees(Double(i - 2) * 12))
+                            .offset(x: CGFloat(i - 2) * 18, y: abs(Double(i - 2)) * 4)
+                            .shadow(color: .black.opacity(0.25), radius: 6, x: 0, y: 4)
                     }
-                    .font(.headline)
-                    .foregroundStyle(.white.opacity(0.9))
-                    .padding(.horizontal, 36)
-                    .padding(.vertical, 12)
-                    .background(
-                        RoundedRectangle(cornerRadius: 12)
-                            .fill(Color.white.opacity(0.15))
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 12)
-                                    .stroke(Color.white.opacity(0.3), lineWidth: 1)
-                            )
-                    )
                 }
+                .frame(height: 100)
 
                 Spacer()
+
+                // Difficulty picker
+                VStack(spacing: 10) {
+                    Text("DIFFICULTY")
+                        .font(.custom("ZenKakuGothicNew-Bold", size: 10))
+                        .foregroundStyle(Color.shInkLight)
+                        .tracking(3)
+
+                    HStack(spacing: 8) {
+                        ForEach([Difficulty.easy, Difficulty.hard], id: \.self) { level in
+                            let isSelected = vm.difficulty == level
+                            Button { vm.difficulty = level } label: {
+                                Text(level.rawValue.uppercased())
+                                    .font(.custom("ZenKakuGothicNew-Bold", size: 11))
+                                    .foregroundStyle(isSelected ? Color.shParchmentLight : Color.shInk)
+                                    .tracking(3)
+                                    .frame(maxWidth: .infinity)
+                                    .padding(.vertical, 10)
+                                    .background(
+                                        RoundedRectangle(cornerRadius: 2)
+                                            .fill(isSelected ? Color.shCrimson : Color.clear)
+                                            .overlay(
+                                                RoundedRectangle(cornerRadius: 2)
+                                                    .stroke(isSelected ? Color.shCrimson : Color.shInk,
+                                                            lineWidth: 1.5)
+                                            )
+                                    )
+                            }
+                            .buttonStyle(.plain)
+                            .animation(.spring(response: 0.22, dampingFraction: 0.7), value: vm.difficulty)
+                        }
+                    }
+                    .padding(.horizontal, 32)
+                }
+
+                Spacer().frame(height: 24)
+
+                // Play button
+                GamePlayButton(title: "PLAY") { vm.startNewGame() }
+                    .padding(.horizontal, 24)
+
+                Spacer().frame(height: 12)
+
+                // How to Play button
+                Button(action: { showInstructions = true }) {
+                    Text("HOW TO PLAY")
+                        .font(.custom("ZenKakuGothicNew-Bold", size: 10))
+                        .foregroundStyle(Color.shInkLight)
+                        .tracking(4)
+                        .textCase(.uppercase)
+                }
+                .buttonStyle(.plain)
+
+                Spacer().frame(height: 48)
             }
         }
-        .onAppear { vm.resumeIfSaved() }
         .fullScreenCover(isPresented: .constant(vm.appPhase != .home)) {
             GameFlowView(vm: vm)
         }

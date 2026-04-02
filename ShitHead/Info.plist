@@ -14,6 +14,14 @@
     <string>$(MARKETING_VERSION)</string>
     <key>CFBundleVersion</key>
     <string>$(CURRENT_PROJECT_VERSION)</string>
+    <key>UIAppFonts</key>
+    <array>
+        <string>ShipporiMincho-Bold.ttf</string>
+        <string>ShipporiMincho-ExtraBold.ttf</string>
+        <string>ZenKakuGothicNew-Regular.ttf</string>
+        <string>ZenKakuGothicNew-Bold.ttf</string>
+        <string>NotoSerifJP-Black.ttf</string>
+    </array>
     <key>UILaunchScreen</key>
     <dict/>
     <key>UISupportedInterfaceOrientations</key>

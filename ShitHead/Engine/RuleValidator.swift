@@ -1,4 +1,4 @@
-// ShitHead/Engine/RuleValidator.swift
+// SheetHead/Engine/RuleValidator.swift
 import Foundation
 
 enum RuleValidator {
@@ -26,18 +26,16 @@ enum RuleValidator {
 
         let effectiveTop = effectiveTopRank(of: pile)
 
-        // Reversal active: must play < 7 (ace counts as low, 2 and 3 already handled above)
+        // Reversal active: must play < 7. 7 itself chains the reversal. Ace is high (14) so blocked.
         if reversalActive {
-            if rank == .ace { return true }
-            if rank == .seven { return false }
+            if rank == .seven { return true }
             return rank.rawValue < 7
         }
 
-        // 7 can only be played on a card with effective value < 7 (ace counts as low)
+        // 7 can only be played on a card with effective value <= 7 (ace is high = 14, blocked)
         if rank == .seven {
             guard let top = effectiveTop else { return true }
-            if top == .ace { return true }
-            return top.rawValue < 7
+            return top.rawValue <= 7
         }
 
         // Normal play: must be >= effective top

@@ -1,8 +1,8 @@
-// ShitHead/ShitHeadApp.swift
+// SheetHead/SheetHeadApp.swift
 import SwiftUI
 
 @main
-struct ShitHeadApp: App {
+struct SheetHeadApp: App {
     @Environment(\.scenePhase) var scenePhase
     @StateObject private var vm = GameViewModel()
 

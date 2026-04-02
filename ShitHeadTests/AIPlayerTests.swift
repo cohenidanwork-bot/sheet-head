@@ -1,5 +1,5 @@
 import XCTest
-@testable import ShitHead
+@testable import SheetHead
 
 final class AIPlayerTests: XCTestCase {
     func makeState(aiHand: [Card], pile: [Card] = [], deck: [Card] = []) -> GameState {

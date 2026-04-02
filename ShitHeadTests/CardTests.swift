@@ -1,5 +1,5 @@
 import XCTest
-@testable import ShitHead
+@testable import SheetHead
 
 final class CardTests: XCTestCase {
     func test_rank_rawValues_are_correct() {

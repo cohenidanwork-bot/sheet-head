@@ -1,4 +1,4 @@
-// ShitHead/Engine/GameEngine.swift
+// SheetHead/Engine/GameEngine.swift
 import Foundation
 
 enum Difficulty: String, Codable {
@@ -92,21 +92,26 @@ enum GameEngine {
         s.discardPile.append(contentsOf: cards)
 
         let rank = cards.first!.rank
-        s.reversalActive = false
 
         if isBomb || rank == .ten {
             s.discardPile = []
+            s.reversalActive = false
             s.bonusTurn = true
             s.currentTurn = player
         } else if rank == .eight {
+            s.reversalActive = false
             s.bonusTurn = true
             s.currentTurn = player
         } else if rank == .seven {
-            let sevenCount = cards.filter { $0.rank == .seven }.count
-            s.reversalActive = sevenCount % 2 == 1
+            s.reversalActive = true   // 7 always forces next player to play below 7
+            s.bonusTurn = false
+            s.currentTurn = player == .human ? .ai : .human
+        } else if rank == .three {
+            // 3 is transparent: preserves the current reversal state
             s.bonusTurn = false
             s.currentTurn = player == .human ? .ai : .human
         } else {
+            s.reversalActive = false
             s.bonusTurn = false
             s.currentTurn = player == .human ? .ai : .human
         }
@@ -163,8 +168,8 @@ enum GameEngine {
     }
 
     static func checkWinCondition(state: GameState) -> AppPhase {
-        if !state.human.hasCards { return .gameOver(winner: .human, shitHead: .ai) }
-        if !state.ai.hasCards { return .gameOver(winner: .ai, shitHead: .human) }
+        if !state.human.hasCards { return .gameOver(winner: .human, loser: .ai) }
+        if !state.ai.hasCards { return .gameOver(winner: .ai, loser: .human) }
         return .playing
     }
 }
