@@ -3,6 +3,7 @@ import SwiftUI
 
 struct HomeView: View {
     @EnvironmentObject var vm: GameViewModel
+    @State private var showInstructions = false
 
     var body: some View {
         ZStack {
@@ -49,12 +50,34 @@ struct HomeView: View {
                         )
                 }
 
+                Button(action: { showInstructions = true }) {
+                    HStack(spacing: 8) {
+                        Image(systemName: "book.fill")
+                        Text("How to Play")
+                    }
+                    .font(.headline)
+                    .foregroundStyle(.white.opacity(0.9))
+                    .padding(.horizontal, 36)
+                    .padding(.vertical, 12)
+                    .background(
+                        RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.white.opacity(0.15))
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 12)
+                                    .stroke(Color.white.opacity(0.3), lineWidth: 1)
+                            )
+                    )
+                }
+
                 Spacer()
             }
         }
         .onAppear { vm.resumeIfSaved() }
         .fullScreenCover(isPresented: .constant(vm.appPhase != .home)) {
             GameFlowView(vm: vm)
+        }
+        .sheet(isPresented: $showInstructions) {
+            InstructionsView()
         }
     }
 }
