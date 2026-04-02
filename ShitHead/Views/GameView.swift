@@ -208,7 +208,7 @@ struct GameView: View {
 
                 if let blast = vm.activeBlast {
                     BlastBadge(type: blast, opponentName: vm.opponentName)
-                        .position(x: discardPileCenter.x, y: discardPileCenter.y - 80)
+                        .position(x: discardPileCenter.x, y: discardPileCenter.y)
                         .transition(.scale(scale: 0.1).combined(with: .opacity))
                         .zIndex(50)
                         .id(blast)
@@ -411,8 +411,10 @@ struct GameView: View {
                             ForEach(Array(played.enumerated()), id: \.offset) { i, card in
                                 let n = Double(played.count)
                                 let center = (n - 1) / 2.0
-                                let angle  = (Double(i) - center) * 7.0
-                                let xOff   = (CGFloat(i) - CGFloat(center)) * 22.0
+                                let maxSpread: CGFloat = min(14.0, 56.0 / CGFloat(max(n - 1, 1)))
+                                let maxAngle: Double = min(6.0, 22.0 / max(n - 1, 1))
+                                let angle = (Double(i) - center) * maxAngle
+                                let xOff  = (CGFloat(i) - CGFloat(center)) * maxSpread
                                 CardView(card: card, size: .board)
                                     .rotationEffect(.degrees(angle))
                                     .offset(x: xOff)
@@ -446,10 +448,15 @@ struct GameView: View {
                     }
                 }
                 .background(GeometryReader { g in
-                    Color.clear.onAppear {
-                        let f = g.frame(in: .named("game"))
-                        discardPileCenter = CGPoint(x: f.midX, y: f.midY)
-                    }
+                    Color.clear
+                        .onAppear {
+                            let f = g.frame(in: .named("game"))
+                            discardPileCenter = CGPoint(x: f.midX, y: f.midY)
+                        }
+                        .onChange(of: vm.gameState?.discardPile.count) { _ in
+                            let f = g.frame(in: .named("game"))
+                            discardPileCenter = CGPoint(x: f.midX, y: f.midY)
+                        }
                 })
                 .onLongPressGesture(minimumDuration: 0.5) {
                     guard vm.gameState?.currentTurn == .human,
@@ -594,7 +601,7 @@ struct GameView: View {
                 }
                 IconButton(systemName: "xmark") { vm.selectedCards = [] }
             } else if vm.mustPickUp {
-                GamePlayButton(title: "PICK UP PILE") {
+                GamePlayButton(title: "TAKE PILE") {
                     Haptics.medium()
                     vm.pickUpPile()
                 }
