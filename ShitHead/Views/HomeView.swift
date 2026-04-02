@@ -27,13 +27,13 @@ struct HomeView: View {
                 Spacer()
 
                 // Logo block
-                VStack(spacing: 4) {
-                    // Main title
-                    Text("SHEET HEAD")
-                        .font(.custom("ShipporiMincho-ExtraBold", size: 44))
-                        .foregroundStyle(Color.shInk)
-                        .tracking(4)
-                        .shadow(color: Color.shCrimson.opacity(0.25), radius: 0, x: 0, y: 2)
+                VStack(spacing: 8) {
+                    Image("launch-logo")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 200, height: 200)
+                        .clipShape(RoundedRectangle(cornerRadius: 36))
+                        .shadow(color: .black.opacity(0.20), radius: 12, x: 0, y: 6)
 
                     // Tagline
                     Text("The Card Game")
@@ -41,19 +41,6 @@ struct HomeView: View {
                         .foregroundStyle(Color.shInkLight)
                         .tracking(6)
                         .textCase(.uppercase)
-
-                    // Hanko seal
-                    Text("SH")
-                        .font(.custom("NotoSerifCJKjp-Black", size: 18))
-                        .foregroundStyle(Color.shCrimson)
-                        .frame(width: 44, height: 44)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 4)
-                                .stroke(Color.shCrimson, lineWidth: 2)
-                        )
-                        .rotationEffect(.degrees(-8))
-                        .opacity(0.70)
-                        .padding(.top, 10)
                 }
 
                 Spacer().frame(height: 32)
@@ -116,12 +103,19 @@ struct HomeView: View {
                 // How to Play button
                 Button(action: { showInstructions = true }) {
                     Text("HOW TO PLAY")
-                        .font(.custom("ZenKakuGothicNew-Bold", size: 10))
-                        .foregroundStyle(Color.shInkLight)
+                        .font(.custom("ZenKakuGothicNew-Bold", size: 11))
+                        .foregroundStyle(Color.shInk)
                         .tracking(4)
                         .textCase(.uppercase)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 12)
+                        .background(
+                            RoundedRectangle(cornerRadius: 2)
+                                .stroke(Color.shInk.opacity(0.40), lineWidth: 1.5)
+                        )
                 }
                 .buttonStyle(.plain)
+                .padding(.horizontal, 24)
 
                 Spacer().frame(height: 48)
             }

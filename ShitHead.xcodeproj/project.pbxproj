@@ -29,6 +29,7 @@
 		AA000050AA000050AA000050 /* GameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000051AA000051AA000051 /* GameOverView.swift */; };
 		BB000060BB000060BB000060 /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB000061BB000061BB000061 /* DesignSystem.swift */; };
 		CC000030CC000030CC000030 /* InstructionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC000031CC000031CC000031 /* InstructionsView.swift */; };
+		CC000032CC000032CC000032 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC000033CC000033CC000033 /* SplashView.swift */; };
 		CC000010CC000010CC000010 /* ShipporiMincho-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CC000011CC000011CC000011 /* ShipporiMincho-Bold.ttf */; };
 		CC000012CC000012CC000012 /* ShipporiMincho-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CC000013CC000013CC000013 /* ShipporiMincho-ExtraBold.ttf */; };
 		CC000014CC000014CC000014 /* ZenKakuGothicNew-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CC000015CC000015CC000015 /* ZenKakuGothicNew-Regular.ttf */; };
@@ -72,6 +73,7 @@
 		AA000051AA000051AA000051 /* GameOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverView.swift; sourceTree = "<group>"; };
 		BB000061BB000061BB000061 /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
 		CC000031CC000031CC000031 /* InstructionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsView.swift; sourceTree = "<group>"; };
+		CC000033CC000033CC000033 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		CC000011CC000011CC000011 /* ShipporiMincho-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ShipporiMincho-Bold.ttf"; sourceTree = "<group>"; };
 		CC000013CC000013CC000013 /* ShipporiMincho-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ShipporiMincho-ExtraBold.ttf"; sourceTree = "<group>"; };
 		CC000015CC000015CC000015 /* ZenKakuGothicNew-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ZenKakuGothicNew-Regular.ttf"; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				AA000051AA000051AA000051 /* GameOverView.swift */,
 				BB000061BB000061BB000061 /* DesignSystem.swift */,
 				CC000031CC000031CC000031 /* InstructionsView.swift */,
+				CC000033CC000033CC000033 /* SplashView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				AA000050AA000050AA000050 /* GameOverView.swift in Sources */,
 				BB000060BB000060BB000060 /* DesignSystem.swift in Sources */,
 				CC000030CC000030CC000030 /* InstructionsView.swift in Sources */,
+				CC000032CC000032CC000032 /* SplashView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
