@@ -570,6 +570,12 @@ struct GameView: View {
                         guard isMyTurn else { return }
                         Haptics.light(); vm.toggleCard(card)
                     }
+                    .onLongPressGesture(minimumDuration: 0.35) {
+                        guard isMyTurn else { return }
+                        let sameRank = hand.filter { $0.rank == card.rank }
+                        Haptics.medium()
+                        vm.selectedCards = sameRank
+                    }
             }
         }
 

@@ -13,20 +13,20 @@ enum BlastType: Equatable {
 
     var headline: String {
         switch self {
-        case .burn:         return "BURN"
-        case .bomb:         return "BOMB"
-        case .playerPickup: return "COWARD"
-        case .cpuPickup:    return "BAILS!"
-        case .reversal:     return "UNDER 7!"
-        case .skip:         return "SKIPPED!"
+        case .burn:         return "PILE CLEARED"
+        case .bomb:         return "FOUR OF A KIND"
+        case .playerPickup: return "TAKE THE PILE"
+        case .cpuPickup:    return "TAKES THE PILE"
+        case .reversal:     return "PLAY UNDER 7"
+        case .skip:         return "SKIP"
         }
     }
 
     var subline: String {
         switch self {
         case .burn:         return "THE PILE IS GONE"
-        case .bomb:         return "FOUR OF A KIND"
-        case .playerPickup: return "YOU PICKED UP THE PILE"
+        case .bomb:         return "PILE CLEARED"
+        case .playerPickup: return "YOU PICK UP THE PILE"
         case .cpuPickup:    return "IT TAKES THE PILE"
         case .reversal:     return "PLAY UNDER 7"
         case .skip:         return "NEXT PLAYER MISSES A TURN"
