@@ -21,7 +21,7 @@ struct BlastOverlay: View {
     }
 
     private var displayHeadline: String {
-        type == .cpuPickup ? "\(opponentName) BAILS" : type.headline
+        type == .cpuPickup ? "\(opponentName) TAKES THE PILE" : type.headline
     }
     private var displaySubline: String {
         type == .cpuPickup ? "TAKES THE PILE" : type.subline
@@ -92,7 +92,7 @@ struct BlastBadge: View {
         }
     }
     private var displayHeadline: String {
-        type == .cpuPickup ? "\(opponentName) BAILS" : type.headline
+        type == .cpuPickup ? "\(opponentName) TAKES THE PILE" : type.headline
     }
 
     var body: some View {
