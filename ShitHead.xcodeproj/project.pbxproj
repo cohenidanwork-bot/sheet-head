@@ -30,6 +30,8 @@
 		BB000060BB000060BB000060 /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB000061BB000061BB000061 /* DesignSystem.swift */; };
 		CC000030CC000030CC000030 /* InstructionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC000031CC000031CC000031 /* InstructionsView.swift */; };
 		CC000032CC000032CC000032 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC000033CC000033CC000033 /* SplashView.swift */; };
+		CC000034CC000034CC000034 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = CC000035CC000035CC000035 /* PrivacyInfo.xcprivacy */; };
+		CC000036CC000036CC000036 /* SheetHead.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = CC000037CC000037CC000037 /* SheetHead.entitlements */; };
 		CC000010CC000010CC000010 /* ShipporiMincho-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CC000011CC000011CC000011 /* ShipporiMincho-Bold.ttf */; };
 		CC000012CC000012CC000012 /* ShipporiMincho-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CC000013CC000013CC000013 /* ShipporiMincho-ExtraBold.ttf */; };
 		CC000014CC000014CC000014 /* ZenKakuGothicNew-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CC000015CC000015CC000015 /* ZenKakuGothicNew-Regular.ttf */; };
@@ -74,6 +76,8 @@
 		BB000061BB000061BB000061 /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
 		CC000031CC000031CC000031 /* InstructionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsView.swift; sourceTree = "<group>"; };
 		CC000033CC000033CC000033 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		CC000035CC000035CC000035 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		CC000037CC000037CC000037 /* SheetHead.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SheetHead.entitlements; sourceTree = "<group>"; };
 		CC000011CC000011CC000011 /* ShipporiMincho-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ShipporiMincho-Bold.ttf"; sourceTree = "<group>"; };
 		CC000013CC000013CC000013 /* ShipporiMincho-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ShipporiMincho-ExtraBold.ttf"; sourceTree = "<group>"; };
 		CC000015CC000015CC000015 /* ZenKakuGothicNew-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ZenKakuGothicNew-Regular.ttf"; sourceTree = "<group>"; };
@@ -180,6 +184,8 @@
 			isa = PBXGroup;
 			children = (
 				7B866BB1A01F44B9C7CA81A1 /* Info.plist */,
+				CC000035CC000035CC000035 /* PrivacyInfo.xcprivacy */,
+				CC000037CC000037CC000037 /* SheetHead.entitlements */,
 				9706A35B45813D7886770A54 /* ShitHeadApp.swift */,
 				AA000007AA000007AA000007 /* Models */,
 				AA000018AA000018AA000018 /* Engine */,
@@ -275,6 +281,7 @@
 				CC000016CC000016CC000016 /* ZenKakuGothicNew-Bold.ttf in Resources */,
 				CC000018CC000018CC000018 /* NotoSerifJP-Black.ttf in Resources */,
 				CC000001CC000001CC000001 /* Assets.xcassets in Resources */,
+				CC000034CC000034CC000034 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,8 +398,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DA2PC56WS5;
+				CODE_SIGN_ENTITLEMENTS = ShitHead/SheetHead.entitlements;
 				INFOPLIST_FILE = ShitHead/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -507,8 +516,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DA2PC56WS5;
+				CODE_SIGN_ENTITLEMENTS = ShitHead/SheetHead.entitlements;
 				INFOPLIST_FILE = ShitHead/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
