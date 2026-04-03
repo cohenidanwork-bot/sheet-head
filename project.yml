@@ -1,4 +1,4 @@
-name: ShitHead
+name: SheetHead
 options:
   bundleIdPrefix: com.idancoh
   deploymentTarget:
@@ -10,22 +10,22 @@ settings:
     MARKETING_VERSION: "1.0"
     CURRENT_PROJECT_VERSION: "1"
 targets:
-  ShitHead:
+  SheetHead:
     type: application
     platform: iOS
     sources:
       - path: ShitHead
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.idancoh.shithead
+        PRODUCT_BUNDLE_IDENTIFIER: com.idancoh.sheethead
         INFOPLIST_FILE: ShitHead/Info.plist
-  ShitHeadTests:
+  SheetHeadTests:
     type: bundle.unit-test
     platform: iOS
     sources:
       - path: ShitHeadTests
     dependencies:
-      - target: ShitHead
+      - target: SheetHead
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.idancoh.shithead.tests
+        PRODUCT_BUNDLE_IDENTIFIER: com.idancoh.sheethead.tests
