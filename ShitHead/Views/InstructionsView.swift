@@ -44,17 +44,17 @@ struct InstructionsView: View {
 
                     // Setup
                     InstructionSection(title: "SETUP") {
-                        InstructionText("Each player receives:")
-                        BulletPoint("3 face-down cards (placed blind on the table)")
-                        BulletPoint("3 face-up cards (placed on top of the face-down cards)")
-                        BulletPoint("6 cards in hand")
-                        InstructionText("Before the game starts, choose 3 cards from your hand to place face-up on the table.")
+                        InstructionText("Each player receives 9 cards:")
+                        BulletPoint("3 face-down cards placed blind on the table")
+                        BulletPoint("6 cards dealt to your hand — choose 3 to place face-up on the table, keep 3 in hand")
+                        InstructionText("Place your strongest cards face-up so they're available in the later stages.")
                     }
 
                     // Playing
                     InstructionSection(title: "PLAYING CARDS") {
+                        InstructionText("The player with the lowest card in hand goes first.")
                         InstructionText("On your turn, play one or more cards of the same rank onto the discard pile. The card you play must be equal to or higher than the top card.")
-                        InstructionText("If you can't play, pick up the entire discard pile.")
+                        InstructionText("If you can't play, pick up the entire discard pile and add it to your hand.")
                         InstructionText("After playing from your hand, draw back up to 3 cards while the deck has cards remaining.")
                     }
 
@@ -82,12 +82,12 @@ struct InstructionsView: View {
                             SpecialCardRow(
                                 card: Card(suit: .diamonds, rank: .seven),
                                 title: "7 — Reversal",
-                                description: "Next player must play a card lower than 7."
+                                description: "Next player must play a card lower than 7. Aces count as 1 (low) during reversal."
                             )
                             SpecialCardRow(
                                 card: Card(suit: .spades, rank: .eight),
                                 title: "8 — Skip",
-                                description: "The next player's turn is skipped. You play again immediately."
+                                description: "The next player's turn is skipped. In a 2-player game this means you play again."
                             )
                             SpecialCardRow(
                                 card: Card(suit: .hearts, rank: .ten),
