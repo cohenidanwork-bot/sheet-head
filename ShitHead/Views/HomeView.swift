@@ -4,6 +4,7 @@ import SwiftUI
 struct HomeView: View {
     @EnvironmentObject var vm: GameViewModel
     @State private var showInstructions = false
+    @State private var showSettings = false
 
     var body: some View {
         ZStack {
@@ -71,40 +72,6 @@ struct HomeView: View {
 
                 Spacer()
 
-                // Difficulty picker
-                VStack(spacing: 10) {
-                    Text("DIFFICULTY")
-                        .font(.custom("ZenKakuGothicNew-Bold", size: 10))
-                        .foregroundStyle(Color.shInkLight)
-                        .tracking(3)
-
-                    HStack(spacing: 8) {
-                        ForEach([Difficulty.easy, Difficulty.hard], id: \.self) { level in
-                            let isSelected = vm.difficulty == level
-                            Button { vm.difficulty = level } label: {
-                                Text(level.rawValue.uppercased())
-                                    .font(.custom("ZenKakuGothicNew-Bold", size: 11))
-                                    .foregroundStyle(isSelected ? Color.shParchmentLight : Color.shInk)
-                                    .tracking(3)
-                                    .frame(maxWidth: .infinity)
-                                    .padding(.vertical, 10)
-                                    .background(
-                                        RoundedRectangle(cornerRadius: 2)
-                                            .fill(isSelected ? Color.shCrimson : Color.clear)
-                                            .overlay(
-                                                RoundedRectangle(cornerRadius: 2)
-                                                    .stroke(isSelected ? Color.shCrimson : Color.shInk,
-                                                            lineWidth: 1.5)
-                                            )
-                                    )
-                            }
-                            .buttonStyle(.plain)
-                            .animation(.spring(response: 0.22, dampingFraction: 0.7), value: vm.difficulty)
-                        }
-                    }
-                    .padding(.horizontal, 32)
-                }
-
                 Spacer().frame(height: 24)
 
                 // Play button
@@ -130,6 +97,25 @@ struct HomeView: View {
                 .buttonStyle(.plain)
                 .padding(.horizontal, 24)
 
+                Spacer().frame(height: 12)
+
+                // Settings button
+                Button(action: { showSettings = true }) {
+                    Text("SETTINGS")
+                        .font(.custom("ZenKakuGothicNew-Bold", size: 11))
+                        .foregroundStyle(Color.shInkLight)
+                        .tracking(4)
+                        .textCase(.uppercase)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 12)
+                        .background(
+                            RoundedRectangle(cornerRadius: 2)
+                                .stroke(Color.shInk.opacity(0.20), lineWidth: 1)
+                        )
+                }
+                .buttonStyle(.plain)
+                .padding(.horizontal, 24)
+
                 Spacer().frame(height: 48)
             }
         }
@@ -138,6 +124,9 @@ struct HomeView: View {
         }
         .sheet(isPresented: $showInstructions) {
             InstructionsView()
+        }
+        .sheet(isPresented: $showSettings) {
+            SettingsView()
         }
     }
 }

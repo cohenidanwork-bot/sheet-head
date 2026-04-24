@@ -85,7 +85,7 @@ final class GameViewModel: ObservableObject {
     @Published var phaseBannerTint: Color = .shGold
     @Published var showBurnFlash: Bool = false
     @Published var shakeCardID: String? = nil
-    @Published var difficulty: Difficulty = .easy
+    private let prefs = UserPreferences.shared
     @Published var flyingCards: [FlyingCard] = []
     @Published var hiddenCardIDs: Set<String> = []
     @Published var activeBlast: BlastType? = nil
@@ -124,6 +124,7 @@ final class GameViewModel: ObservableObject {
         flyingCards = []
         lastPlayedCards = []
         selectedCards = []
+        SoundManager.shared.stopMusic()
         appPhase = .home
     }
 
@@ -133,7 +134,7 @@ final class GameViewModel: ObservableObject {
         aiTask?.cancel()
         blastTask?.cancel()
         GamePersistence.clear()
-        let state = GameEngine.setupGame(difficulty: difficulty)
+        let state = GameEngine.setupGame(difficulty: prefs.difficulty)
         setupCards = state.human.hand
         chosenFaceUp = []
         gameState = state
@@ -145,7 +146,8 @@ final class GameViewModel: ObservableObject {
         activeBlast = nil
         opponentName = Self.opponentNames.randomElement() ?? "CPU"
         appPhase = .setup
-        aiPlayer = difficulty == .easy ? EasyAIPlayer() : HardAIPlayer()
+        aiPlayer = prefs.difficulty == .easy ? EasyAIPlayer() : HardAIPlayer()
+        SoundManager.shared.play(.shuffle)
     }
 
     func confirmSetup() {
@@ -155,6 +157,7 @@ final class GameViewModel: ObservableObject {
         previousCardPhase = .hand
         appPhase = .playing
         GamePersistence.save(state)
+        SoundManager.shared.startMusic()
         if state.currentTurn == .ai { scheduleAIMove() }
     }
 
@@ -181,6 +184,7 @@ final class GameViewModel: ObservableObject {
         let wasSkip = cardsToPlay.contains { $0.rank == .eight }
         let fromZone: FlyingCard.FlyZone = state.human.cardPhase == .faceUp ? .playerFaceUp : .playerHand
 
+        SoundManager.shared.play(.cardPlay)
         for card in cardsToPlay {
             hiddenCardIDs.insert(card.id)
             flyingCards.append(FlyingCard(card: card, from: fromZone, to: .discardPile,
@@ -212,6 +216,7 @@ final class GameViewModel: ObservableObject {
         let wasBomb = RuleValidator.isBomb(pile: state.discardPile, adding: [topCard])
 
         // Reveal: show the flipped card flying face-up to pile so player can see it
+        SoundManager.shared.play(.cardFlip)
         flyingCards.append(FlyingCard(card: topCard, from: .playerFaceUp, to: .discardPile,
                                       rotation: Double.random(in: -10...10)))
         lastPlayedCards = [topCard]
@@ -232,6 +237,7 @@ final class GameViewModel: ObservableObject {
 
     func pickUpPile() {
         guard var state = gameState else { return }
+        SoundManager.shared.play(.cardPickup)
         if let top = state.topOfPile {
             flyingCards.append(FlyingCard(card: top, from: .discardPile, to: .playerHand,
                                           rotation: Double.random(in: -8...8)))
@@ -261,8 +267,10 @@ final class GameViewModel: ObservableObject {
 
         if !didBurn {
             if didActivateReversal {
+                SoundManager.shared.play(.reversal)
                 triggerBlast(.reversal, afterDelay: 0.7)
             } else if wasSkip {
+                SoundManager.shared.play(.skip)
                 triggerBlast(.skip, afterDelay: 0.7)
             }
         }
@@ -273,7 +281,9 @@ final class GameViewModel: ObservableObject {
         gameState = state
         GamePersistence.save(state)
 
-        if case .gameOver = outcome {
+        if case .gameOver(let winner, _) = outcome {
+            SoundManager.shared.stopMusic()
+            SoundManager.shared.play(winner == .human ? .win : .lose)
             appPhase = outcome
             return
         }
@@ -307,6 +317,7 @@ final class GameViewModel: ObservableObject {
             let wasBomb = RuleValidator.isBomb(pile: state.discardPile, adding: [topCard])
 
             // Reveal: show the AI's flipped card flying face-up to pile
+            SoundManager.shared.play(.cardFlip)
             flyingCards.append(FlyingCard(card: topCard, from: .opponentHand, to: .discardPile,
                                           rotation: Double.random(in: -10...10)))
             lastPlayedCards = [topCard]
@@ -326,6 +337,7 @@ final class GameViewModel: ObservableObject {
         } else if let move = aiPlayer.chooseMove(state: state) {
             let wasBomb = RuleValidator.isBomb(pile: state.discardPile, adding: move)
             let wasSkip = move.contains { $0.rank == .eight }
+            SoundManager.shared.play(.cardPlay)
             for card in move {
                 flyingCards.append(FlyingCard(card: card, from: .opponentHand, to: .discardPile,
                                               rotation: Double.random(in: -12...12)))
@@ -340,6 +352,7 @@ final class GameViewModel: ObservableObject {
                 finishTurn(state: newState, prevPileCount: ppc, wasBomb: wasBomb, wasSkip: wasSkip)
             }
         } else {
+            SoundManager.shared.play(.cardPickup)
             if let top = state.topOfPile {
                 flyingCards.append(FlyingCard(card: top, from: .discardPile, to: .opponentHand,
                                               rotation: Double.random(in: -8...8)))
@@ -375,6 +388,7 @@ final class GameViewModel: ObservableObject {
     // MARK: - UI Effects
 
     private func triggerBurn(wasBomb: Bool) {
+        SoundManager.shared.play(.burn)
         showBurnFlash = true
         triggerBlast(wasBomb ? .bomb : .burn)
         Task {

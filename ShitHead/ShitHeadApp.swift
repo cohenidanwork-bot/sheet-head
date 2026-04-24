@@ -28,8 +28,14 @@ struct SheetHeadApp: App {
             }
         }
         .onChange(of: scenePhase) { _, phase in
-            if phase == .background, let state = vm.gameState {
-                GamePersistence.save(state)
+            switch phase {
+            case .background:
+                if let state = vm.gameState { GamePersistence.save(state) }
+                SoundManager.shared.pauseMusic()
+            case .active:
+                SoundManager.shared.resumeMusic()
+            default:
+                break
             }
         }
     }
