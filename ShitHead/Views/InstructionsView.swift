@@ -42,6 +42,7 @@ struct InstructionsView: View {
 
                     // How to Play
                     InstructionSection(title: "Playing Cards") {
+                        InstructionText("The player with the lowest card in hand goes first.")
                         InstructionText("On your turn, play one or more cards of the same rank onto the discard pile. The card you play must be equal to or higher than the top card of the pile.")
                         InstructionText("If you can't play, pick up the entire discard pile and add it to your hand.")
                         InstructionText("After playing from your hand, draw back up to 3 cards while the deck has cards remaining.")
@@ -71,12 +72,12 @@ struct InstructionsView: View {
                             SpecialCardRow(
                                 card: Card(suit: .diamonds, rank: .seven),
                                 title: "7 — Reversal",
-                                description: "Next player must play a card lower than 7. Aces count as 1 (low) during reversal. Playing an even number of 7s cancels the reversal."
+                                description: "Next player must play a card lower than 7. Aces count as 1 (low) during reversal."
                             )
                             SpecialCardRow(
                                 card: Card(suit: .spades, rank: .eight),
                                 title: "8 — Skip",
-                                description: "The next player's turn is skipped. You get to play again immediately."
+                                description: "The next player's turn is skipped. In a 2-player game this means you play again."
                             )
                             SpecialCardRow(
                                 card: Card(suit: .hearts, rank: .ten),
