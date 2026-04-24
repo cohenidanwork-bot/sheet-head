@@ -155,6 +155,7 @@ final class GameViewModel: ObservableObject {
         previousCardPhase = .hand
         appPhase = .playing
         GamePersistence.save(state)
+        if state.currentTurn == .ai { scheduleAIMove() }
     }
 
     // MARK: - Player Actions
