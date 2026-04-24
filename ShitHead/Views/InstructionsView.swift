@@ -33,11 +33,10 @@ struct InstructionsView: View {
 
                     // Setup
                     InstructionSection(title: "Setup") {
-                        InstructionText("Each player receives:")
-                        BulletPoint("3 face-down cards (placed blind on the table)")
-                        BulletPoint("3 face-up cards (placed on top of the face-down cards)")
-                        BulletPoint("6 cards in hand")
-                        InstructionText("Before the game starts, choose 3 cards from your hand to place face-up on the table.")
+                        InstructionText("Each player receives 9 cards:")
+                        BulletPoint("3 face-down cards placed blind on the table")
+                        BulletPoint("6 cards dealt to your hand — choose 3 to place face-up on the table, keep 3 in hand")
+                        InstructionText("Place your strongest cards face-up so they're available in the later stages.")
                     }
 
                     // How to Play
