@@ -1,4 +1,4 @@
-// ShitHead/Models/Card.swift
+// SheetHead/Models/Card.swift
 import Foundation
 
 enum Suit: String, CaseIterable, Codable, Hashable {

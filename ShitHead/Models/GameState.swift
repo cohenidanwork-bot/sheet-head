@@ -1,4 +1,4 @@
-// ShitHead/Models/GameState.swift
+// SheetHead/Models/GameState.swift
 import Foundation
 
 enum PlayerID: String, Codable, Hashable {
@@ -16,7 +16,7 @@ enum AppPhase: Codable, Equatable {
     case home
     case setup      // Player selecting face-up cards
     case playing
-    case gameOver(winner: PlayerID, shitHead: PlayerID)
+    case gameOver(winner: PlayerID, loser: PlayerID)
 }
 
 struct PlayerState: Codable, Equatable {

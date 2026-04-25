@@ -1,4 +1,4 @@
-// ShitHead/Views/SetupView.swift
+// SheetHead/Views/SetupView.swift — Japanese Mountain Design
 import SwiftUI
 
 struct GameFlowView: View {
@@ -10,8 +10,8 @@ struct GameFlowView: View {
             SetupView(vm: vm)
         case .playing:
             GameView(vm: vm)
-        case .gameOver(let winner, let shitHead):
-            GameOverView(winner: winner, shitHead: shitHead, vm: vm)
+        case .gameOver(let winner, let loser):
+            GameOverView(winner: winner, loser: loser, vm: vm)
         case .home:
             EmptyView()
         }
@@ -23,49 +23,75 @@ struct SetupView: View {
 
     var body: some View {
         ZStack {
-            Color(red: 0.13, green: 0.45, blue: 0.25).ignoresSafeArea()
+            Color.shParchment.ignoresSafeArea()
 
-            VStack(spacing: 24) {
-                Text("Choose 3 face-up cards")
-                    .font(.title2.bold())
-                    .foregroundStyle(.white)
-                    .padding(.top, 40)
+            LinearGradient(
+                colors: [Color.shParchmentLight.opacity(0.8), Color.shParchmentDeep.opacity(0.6)],
+                startPoint: .top,
+                endPoint: .bottom
+            )
+            .ignoresSafeArea()
 
-                Text("These will be visible on the table.\nChoose your best cards.")
-                    .multilineTextAlignment(.center)
-                    .foregroundStyle(.white.opacity(0.8))
-                    .font(.subheadline)
+            VStack(spacing: 0) {
+                // Header
+                VStack(spacing: 6) {
+                    Text("PICK THREE")
+                        .font(.shLogoSm)
+                        .foregroundStyle(Color.shInk)
+                        .tracking(6)
+                        .padding(.top, 52)
 
-                Text("\(vm.chosenFaceUp.count) / 3 selected")
-                    .font(.headline)
-                    .foregroundStyle(vm.chosenFaceUp.count == 3 ? .yellow : .white.opacity(0.7))
+                    Text("Choose your face-up cards")
+                        .font(.shCaption)
+                        .foregroundStyle(Color.shInkLight)
+                        .tracking(3)
+                        .textCase(.uppercase)
+                }
 
-                LazyVGrid(columns: Array(repeating: GridItem(.fixed(60)), count: 3), spacing: 16) {
+                Spacer().frame(height: 20)
+
+                // Counter badge
+                HStack(spacing: 6) {
+                    ForEach(0..<3, id: \.self) { i in
+                        Circle()
+                            .fill(i < vm.chosenFaceUp.count ? Color.shGold : Color.shParchment.opacity(0.15))
+                            .frame(width: 8, height: 8)
+                    }
+                }
+                .animation(.spring(response: 0.22, dampingFraction: 0.7), value: vm.chosenFaceUp.count)
+
+                Spacer().frame(height: 20)
+
+                // Card grid
+                LazyVGrid(
+                    columns: Array(repeating: GridItem(.fixed(CardSize.player.width + 16)), count: 3),
+                    spacing: 16
+                ) {
                     ForEach(vm.setupCards) { card in
                         CardView(
                             card: card,
-                            isSelected: vm.chosenFaceUp.contains(card)
+                            isSelected: vm.chosenFaceUp.contains(card),
+                            size: .player
                         )
-                        .onTapGesture { toggleSetupCard(card) }
+                        .onTapGesture {
+                            Haptics.light()
+                            toggleSetupCard(card)
+                        }
                     }
                 }
-                .padding(.horizontal)
+                .padding(.horizontal, 20)
 
                 Spacer()
 
-                Button(action: vm.confirmSetup) {
-                    Text("Confirm")
-                        .font(.title3.bold())
-                        .foregroundStyle(.white)
-                        .padding(.horizontal, 48)
-                        .padding(.vertical, 14)
-                        .background(
-                            RoundedRectangle(cornerRadius: 12)
-                                .fill(vm.chosenFaceUp.count == 3 ? Color.orange : Color.gray)
-                        )
+                // Confirm button
+                GamePlayButton(title: "CONFIRM") {
+                    Haptics.medium()
+                    vm.confirmSetup()
                 }
+                .padding(.horizontal, 24)
+                .opacity(vm.chosenFaceUp.count == 3 ? 1.0 : 0.30)
                 .disabled(vm.chosenFaceUp.count != 3)
-                .padding(.bottom, 40)
+                .padding(.bottom, 48)
             }
         }
     }

@@ -1,4 +1,4 @@
-// ShitHead/Views/InstructionsView.swift
+// SheetHead/Views/InstructionsView.swift — Japanese Mountain Design
 import SwiftUI
 
 struct InstructionsView: View {
@@ -6,57 +6,68 @@ struct InstructionsView: View {
 
     var body: some View {
         ZStack(alignment: .topTrailing) {
-            Color(red: 0.13, green: 0.45, blue: 0.25)
-                .ignoresSafeArea()
+            Color.shParchment.ignoresSafeArea()
+
+            LinearGradient(
+                colors: [Color.shParchmentLight.opacity(0.6), Color.shParchmentDeep.opacity(0.8)],
+                startPoint: .top,
+                endPoint: .bottom
+            )
+            .ignoresSafeArea()
 
             ScrollView {
-                VStack(alignment: .leading, spacing: 28) {
+                VStack(alignment: .leading, spacing: 24) {
+
                     // Header
-                    HStack {
-                        Spacer()
-                        VStack(spacing: 6) {
-                            Text("💩")
-                                .font(.system(size: 44))
-                            Text("How to Play")
-                                .font(.system(size: 32, weight: .black, design: .rounded))
-                                .foregroundStyle(.white)
-                                .shadow(color: .black.opacity(0.4), radius: 4)
-                        }
-                        Spacer()
+                    VStack(spacing: 6) {
+                        Text("HOW TO PLAY")
+                            .font(.shLogoSm)
+                            .foregroundStyle(Color.shInk)
+                            .tracking(6)
+
+                        Text("Sheet Head")
+                            .font(.custom("ShipporiMincho-Bold", size: 13))
+                            .foregroundStyle(Color.shInkLight)
+                            .tracking(4)
                     }
-                    .padding(.top, 60)
+                    .frame(maxWidth: .infinity)
+                    .padding(.top, 64)
+                    .padding(.bottom, 8)
+
+                    Divider()
+                        .background(Color.shInk.opacity(0.15))
 
                     // Objective
-                    InstructionSection(title: "Objective") {
-                        InstructionText("Be the first player to get rid of all your cards. The last player with cards is the Shit Head 💩")
+                    InstructionSection(title: "OBJECTIVE") {
+                        InstructionText("Be the first player to get rid of all your cards. The last player with cards is the Sheet Head.")
                     }
 
                     // Setup
-                    InstructionSection(title: "Setup") {
+                    InstructionSection(title: "SETUP") {
                         InstructionText("Each player receives 9 cards:")
                         BulletPoint("3 face-down cards placed blind on the table")
                         BulletPoint("6 cards dealt to your hand — choose 3 to place face-up on the table, keep 3 in hand")
                         InstructionText("Place your strongest cards face-up so they're available in the later stages.")
                     }
 
-                    // How to Play
-                    InstructionSection(title: "Playing Cards") {
+                    // Playing
+                    InstructionSection(title: "PLAYING CARDS") {
                         InstructionText("The player with the lowest card in hand goes first.")
-                        InstructionText("On your turn, play one or more cards of the same rank onto the discard pile. The card you play must be equal to or higher than the top card of the pile.")
+                        InstructionText("On your turn, play one or more cards of the same rank onto the discard pile. The card you play must be equal to or higher than the top card.")
                         InstructionText("If you can't play, pick up the entire discard pile and add it to your hand.")
                         InstructionText("After playing from your hand, draw back up to 3 cards while the deck has cards remaining.")
                     }
 
                     // Card Phases
-                    InstructionSection(title: "Card Phases") {
-                        BulletPoint("Hand cards → play from your hand first")
-                        BulletPoint("Face-up cards → once your hand is empty")
-                        BulletPoint("Face-down cards → flip blind once face-up cards are gone")
+                    InstructionSection(title: "CARD PHASES") {
+                        BulletPoint("Hand cards — play from your hand first")
+                        BulletPoint("Face-up cards — once your hand is empty")
+                        BulletPoint("Face-down cards — flip blind once face-up cards are gone")
                         InstructionText("If a blind card can't be played, you pick up the pile.")
                     }
 
                     // Special Cards
-                    InstructionSection(title: "Special Cards") {
+                    InstructionSection(title: "SPECIAL CARDS") {
                         VStack(spacing: 16) {
                             SpecialCardRow(
                                 card: Card(suit: .hearts, rank: .two),
@@ -81,27 +92,27 @@ struct InstructionsView: View {
                             SpecialCardRow(
                                 card: Card(suit: .hearts, rank: .ten),
                                 title: "10 — Burn",
-                                description: "Clears the entire discard pile (burn!). You get a bonus turn immediately after."
+                                description: "Clears the entire discard pile. You get a bonus turn immediately after."
                             )
                         }
                     }
 
                     // Bomb
-                    InstructionSection(title: "Bomb (4 of a Kind)") {
-                        HStack(spacing: -16) {
+                    InstructionSection(title: "BOMB — 4 OF A KIND") {
+                        HStack(spacing: -10) {
                             ForEach([Suit.hearts, .diamonds, .clubs, .spades], id: \.self) { suit in
-                                CardView(card: Card(suit: suit, rank: .king))
+                                CardView(card: Card(suit: suit, rank: .king), size: .player)
                             }
                         }
                         .padding(.vertical, 4)
-                        InstructionText("Playing four cards of the same rank at once is a Bomb 💣 — it clears the discard pile and gives you a bonus turn, just like a 10.")
+                        InstructionText("Playing four cards of the same rank clears the discard pile and gives you a bonus turn, just like a 10.")
                     }
 
                     // Tips
-                    InstructionSection(title: "Tips") {
+                    InstructionSection(title: "TIPS") {
                         BulletPoint("Place your best special cards (10s, 8s) face-up on the table.")
                         BulletPoint("Save low cards for when you need to play after a reversal.")
-                        BulletPoint("Watch how many cards your opponent has — use skip (8) when they're close to winning.")
+                        BulletPoint("Use skip (8) when your opponent is close to winning.")
                     }
 
                     Spacer(minLength: 40)
@@ -111,12 +122,13 @@ struct InstructionsView: View {
 
             // Close button
             Button(action: { dismiss() }) {
-                Image(systemName: "xmark.circle.fill")
-                    .font(.system(size: 32))
-                    .foregroundStyle(.white.opacity(0.85))
-                    .shadow(color: .black.opacity(0.3), radius: 4)
+                Image(systemName: "xmark")
+                    .font(.system(size: 14, weight: .medium))
+                    .foregroundStyle(Color.shInkMed)
+                    .frame(width: 32, height: 32)
+                    .background(Color.shInk.opacity(0.08), in: RoundedRectangle(cornerRadius: 2))
             }
-            .padding(.top, 16)
+            .padding(.top, 56)
             .padding(.trailing, 20)
         }
     }
@@ -131,20 +143,24 @@ private struct InstructionSection<Content: View>: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
             Text(title)
-                .font(.system(size: 20, weight: .bold, design: .rounded))
-                .foregroundStyle(.white)
-                .padding(.bottom, 2)
+                .font(.shNavLabel)
+                .foregroundStyle(Color.shInk)
+                .tracking(3)
 
             Rectangle()
-                .fill(Color.white.opacity(0.25))
+                .fill(Color.shInk.opacity(0.12))
                 .frame(height: 1)
 
             content()
         }
         .padding(16)
         .background(
-            RoundedRectangle(cornerRadius: 14)
-                .fill(Color.black.opacity(0.2))
+            RoundedRectangle(cornerRadius: 3)
+                .fill(Color.shParchmentLight.opacity(0.6))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 3)
+                        .stroke(Color.shInk.opacity(0.08), lineWidth: 1)
+                )
         )
     }
 }
@@ -155,8 +171,8 @@ private struct InstructionText: View {
 
     var body: some View {
         Text(text)
-            .font(.system(size: 15))
-            .foregroundStyle(.white.opacity(0.9))
+            .font(.shButtonSm)
+            .foregroundStyle(Color.shInkMed)
             .fixedSize(horizontal: false, vertical: true)
     }
 }
@@ -166,13 +182,13 @@ private struct BulletPoint: View {
     init(_ text: String) { self.text = text }
 
     var body: some View {
-        HStack(alignment: .top, spacing: 8) {
-            Text("•")
-                .foregroundStyle(.white.opacity(0.7))
-                .font(.system(size: 15))
+        HStack(alignment: .top, spacing: 10) {
+            Text("—")
+                .foregroundStyle(Color.shCrimson.opacity(0.7))
+                .font(.shCaption)
             Text(text)
-                .font(.system(size: 15))
-                .foregroundStyle(.white.opacity(0.9))
+                .font(.shButtonSm)
+                .foregroundStyle(Color.shInkMed)
                 .fixedSize(horizontal: false, vertical: true)
         }
     }
@@ -185,16 +201,17 @@ private struct SpecialCardRow: View {
 
     var body: some View {
         HStack(alignment: .top, spacing: 14) {
-            CardView(card: card)
+            CardView(card: card, size: .player)
                 .fixedSize()
 
             VStack(alignment: .leading, spacing: 4) {
                 Text(title)
-                    .font(.system(size: 15, weight: .bold))
-                    .foregroundStyle(.white)
+                    .font(.shNavLabel)
+                    .foregroundStyle(Color.shInk)
+                    .tracking(1)
                 Text(description)
-                    .font(.system(size: 13))
-                    .foregroundStyle(.white.opacity(0.85))
+                    .font(.shCaption)
+                    .foregroundStyle(Color.shInkMed)
                     .fixedSize(horizontal: false, vertical: true)
             }
         }

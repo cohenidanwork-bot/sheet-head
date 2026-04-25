@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -27,6 +27,30 @@
 		AA000046AA000046AA000046 /* SetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000047AA000047AA000047 /* SetupView.swift */; };
 		AA000048AA000048AA000048 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000049AA000049AA000049 /* GameView.swift */; };
 		AA000050AA000050AA000050 /* GameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000051AA000051AA000051 /* GameOverView.swift */; };
+		BB000060BB000060BB000060 /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB000061BB000061BB000061 /* DesignSystem.swift */; };
+		CC000030CC000030CC000030 /* InstructionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC000031CC000031CC000031 /* InstructionsView.swift */; };
+		CC000032CC000032CC000032 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC000033CC000033CC000033 /* SplashView.swift */; };
+		CC000034CC000034CC000034 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = CC000035CC000035CC000035 /* PrivacyInfo.xcprivacy */; };
+		CC000036CC000036CC000036 /* SheetHead.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = CC000037CC000037CC000037 /* SheetHead.entitlements */; };
+		CC000010CC000010CC000010 /* ShipporiMincho-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CC000011CC000011CC000011 /* ShipporiMincho-Bold.ttf */; };
+		CC000012CC000012CC000012 /* ShipporiMincho-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CC000013CC000013CC000013 /* ShipporiMincho-ExtraBold.ttf */; };
+		CC000014CC000014CC000014 /* ZenKakuGothicNew-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CC000015CC000015CC000015 /* ZenKakuGothicNew-Regular.ttf */; };
+		CC000016CC000016CC000016 /* ZenKakuGothicNew-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CC000017CC000017CC000017 /* ZenKakuGothicNew-Bold.ttf */; };
+		CC000018CC000018CC000018 /* NotoSerifJP-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CC000019CC000019CC000019 /* NotoSerifJP-Black.ttf */; };
+		CC000001CC000001CC000001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC000002CC000002CC000002 /* Assets.xcassets */; };
+		DD000002DD000002DD000002 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000001DD000001DD000001 /* SoundManager.swift */; };
+		DD000004DD000004DD000004 /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000003DD000003DD000003 /* UserPreferences.swift */; };
+		DD000006DD000006DD000006 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000005DD000005DD000005 /* SettingsView.swift */; };
+		DD000011DD000011DD000011 /* bgm_ambient.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DD000010DD000010DD000010 /* bgm_ambient.mp3 */; };
+		DD000013DD000013DD000013 /* sfx_card_play.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DD000012DD000012DD000012 /* sfx_card_play.mp3 */; };
+		DD000015DD000015DD000015 /* sfx_card_flip.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DD000014DD000014DD000014 /* sfx_card_flip.mp3 */; };
+		DD000017DD000017DD000017 /* sfx_card_pickup.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DD000016DD000016DD000016 /* sfx_card_pickup.mp3 */; };
+		DD000019DD000019DD000019 /* sfx_burn.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DD000018DD000018DD000018 /* sfx_burn.mp3 */; };
+		DD000021DD000021DD000021 /* sfx_skip.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DD000020DD000020DD000020 /* sfx_skip.mp3 */; };
+		DD000023DD000023DD000023 /* sfx_reversal.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DD000022DD000022DD000022 /* sfx_reversal.mp3 */; };
+		DD000025DD000025DD000025 /* sfx_shuffle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DD000024DD000024DD000024 /* sfx_shuffle.mp3 */; };
+		DD000027DD000027DD000027 /* sfx_win.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DD000026DD000026DD000026 /* sfx_win.mp3 */; };
+		DD000029DD000029DD000029 /* sfx_lose.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DD000028DD000028DD000028 /* sfx_lose.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,8 +67,7 @@
 		3A4CEEAFD425E18CA103EBE5 /* ShitHeadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShitHeadTests.swift; sourceTree = "<group>"; };
 		7B866BB1A01F44B9C7CA81A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9706A35B45813D7886770A54 /* ShitHeadApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShitHeadApp.swift; sourceTree = "<group>"; };
-		9D9378DCA61CC42A1E8B9D4A /* ShitHead.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = ShitHead.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D13D3E0C41EAA7F7C54D9E5A /* ShitHeadTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = ShitHeadTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D9378DCA61CC42A1E8B9D4A /* ShitHead.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShitHead.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA000002AA000002AA000002 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		AA000004AA000004AA000004 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
 		AA000006AA000006AA000006 /* CardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTests.swift; sourceTree = "<group>"; };
@@ -63,6 +86,31 @@
 		AA000047AA000047AA000047 /* SetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupView.swift; sourceTree = "<group>"; };
 		AA000049AA000049AA000049 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		AA000051AA000051AA000051 /* GameOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverView.swift; sourceTree = "<group>"; };
+		BB000061BB000061BB000061 /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
+		CC000031CC000031CC000031 /* InstructionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsView.swift; sourceTree = "<group>"; };
+		CC000033CC000033CC000033 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		CC000035CC000035CC000035 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		CC000037CC000037CC000037 /* SheetHead.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SheetHead.entitlements; sourceTree = "<group>"; };
+		CC000011CC000011CC000011 /* ShipporiMincho-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ShipporiMincho-Bold.ttf"; sourceTree = "<group>"; };
+		CC000013CC000013CC000013 /* ShipporiMincho-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ShipporiMincho-ExtraBold.ttf"; sourceTree = "<group>"; };
+		CC000015CC000015CC000015 /* ZenKakuGothicNew-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ZenKakuGothicNew-Regular.ttf"; sourceTree = "<group>"; };
+		CC000017CC000017CC000017 /* ZenKakuGothicNew-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ZenKakuGothicNew-Bold.ttf"; sourceTree = "<group>"; };
+		CC000019CC000019CC000019 /* NotoSerifJP-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSerifJP-Black.ttf"; sourceTree = "<group>"; };
+		CC000002CC000002CC000002 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D13D3E0C41EAA7F7C54D9E5A /* ShitHeadTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = ShitHeadTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD000001DD000001DD000001 /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
+		DD000003DD000003DD000003 /* UserPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferences.swift; sourceTree = "<group>"; };
+		DD000005DD000005DD000005 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		DD000010DD000010DD000010 /* bgm_ambient.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgm_ambient.mp3; sourceTree = "<group>"; };
+		DD000012DD000012DD000012 /* sfx_card_play.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sfx_card_play.mp3; sourceTree = "<group>"; };
+		DD000014DD000014DD000014 /* sfx_card_flip.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sfx_card_flip.mp3; sourceTree = "<group>"; };
+		DD000016DD000016DD000016 /* sfx_card_pickup.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sfx_card_pickup.mp3; sourceTree = "<group>"; };
+		DD000018DD000018DD000018 /* sfx_burn.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sfx_burn.mp3; sourceTree = "<group>"; };
+		DD000020DD000020DD000020 /* sfx_skip.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sfx_skip.mp3; sourceTree = "<group>"; };
+		DD000022DD000022DD000022 /* sfx_reversal.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sfx_reversal.mp3; sourceTree = "<group>"; };
+		DD000024DD000024DD000024 /* sfx_shuffle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sfx_shuffle.mp3; sourceTree = "<group>"; };
+		DD000026DD000026DD000026 /* sfx_win.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sfx_win.mp3; sourceTree = "<group>"; };
+		DD000028DD000028DD000028 /* sfx_lose.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sfx_lose.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -87,39 +135,22 @@
 			path = ShitHeadTests;
 			sourceTree = "<group>";
 		};
-		CE80AE5E1713C3117E8E3B17 /* ShitHead */ = {
+		AA000007AA000007AA000007 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				7B866BB1A01F44B9C7CA81A1 /* Info.plist */,
-				9706A35B45813D7886770A54 /* ShitHeadApp.swift */,
-				AA000007AA000007AA000007 /* Models */,
-				AA000018AA000018AA000018 /* Engine */,
-				AA000030AA000030AA000030 /* AI */,
-				AA000031AA000031AA000031 /* Persistence */,
-				AA000032AA000032AA000032 /* ViewModels */,
-				AA000033AA000033AA000033 /* Views */,
+				AA000002AA000002AA000002 /* Card.swift */,
+				AA000004AA000004AA000004 /* GameState.swift */,
 			);
-			path = ShitHead;
+			path = Models;
 			sourceTree = "<group>";
 		};
-		AA000032AA000032AA000032 /* ViewModels */ = {
+		AA000018AA000018AA000018 /* Engine */ = {
 			isa = PBXGroup;
 			children = (
-				AA000041AA000041AA000041 /* GameViewModel.swift */,
+				AA000011AA000011AA000011 /* RuleValidator.swift */,
+				AA000013AA000013AA000013 /* GameEngine.swift */,
 			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		AA000033AA000033AA000033 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				AA000043AA000043AA000043 /* CardView.swift */,
-				AA000045AA000045AA000045 /* HomeView.swift */,
-				AA000047AA000047AA000047 /* SetupView.swift */,
-				AA000049AA000049AA000049 /* GameView.swift */,
-				AA000051AA000051AA000051 /* GameOverView.swift */,
-			);
-			path = Views;
+			path = Engine;
 			sourceTree = "<group>";
 		};
 		AA000030AA000030AA000030 /* AI */ = {
@@ -140,22 +171,95 @@
 			path = Persistence;
 			sourceTree = "<group>";
 		};
-		AA000007AA000007AA000007 /* Models */ = {
+		AA000032AA000032AA000032 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				AA000002AA000002AA000002 /* Card.swift */,
-				AA000004AA000004AA000004 /* GameState.swift */,
+				AA000041AA000041AA000041 /* GameViewModel.swift */,
 			);
-			path = Models;
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		AA000018AA000018AA000018 /* Engine */ = {
+		AA000033AA000033AA000033 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				AA000011AA000011AA000011 /* RuleValidator.swift */,
-				AA000013AA000013AA000013 /* GameEngine.swift */,
+				AA000043AA000043AA000043 /* CardView.swift */,
+				AA000045AA000045AA000045 /* HomeView.swift */,
+				AA000047AA000047AA000047 /* SetupView.swift */,
+				AA000049AA000049AA000049 /* GameView.swift */,
+				AA000051AA000051AA000051 /* GameOverView.swift */,
+				BB000061BB000061BB000061 /* DesignSystem.swift */,
+				CC000031CC000031CC000031 /* InstructionsView.swift */,
+				CC000033CC000033CC000033 /* SplashView.swift */,
+				DD000005DD000005DD000005 /* SettingsView.swift */,
 			);
-			path = Engine;
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DD000030DD000030DD000030 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				DD000001DD000001DD000001 /* SoundManager.swift */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
+		DD000031DD000031DD000031 /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				DD000003DD000003DD000003 /* UserPreferences.swift */,
+			);
+			path = Preferences;
+			sourceTree = "<group>";
+		};
+		DD000032DD000032DD000032 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				DD000010DD000010DD000010 /* bgm_ambient.mp3 */,
+				DD000012DD000012DD000012 /* sfx_card_play.mp3 */,
+				DD000014DD000014DD000014 /* sfx_card_flip.mp3 */,
+				DD000016DD000016DD000016 /* sfx_card_pickup.mp3 */,
+				DD000018DD000018DD000018 /* sfx_burn.mp3 */,
+				DD000020DD000020DD000020 /* sfx_skip.mp3 */,
+				DD000022DD000022DD000022 /* sfx_reversal.mp3 */,
+				DD000024DD000024DD000024 /* sfx_shuffle.mp3 */,
+				DD000026DD000026DD000026 /* sfx_win.mp3 */,
+				DD000028DD000028DD000028 /* sfx_lose.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		BB000080BB000080BB000080 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CC000011CC000011CC000011 /* ShipporiMincho-Bold.ttf */,
+				CC000013CC000013CC000013 /* ShipporiMincho-ExtraBold.ttf */,
+				CC000015CC000015CC000015 /* ZenKakuGothicNew-Regular.ttf */,
+				CC000017CC000017CC000017 /* ZenKakuGothicNew-Bold.ttf */,
+				CC000019CC000019CC000019 /* NotoSerifJP-Black.ttf */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CE80AE5E1713C3117E8E3B17 /* ShitHead */ = {
+			isa = PBXGroup;
+			children = (
+				7B866BB1A01F44B9C7CA81A1 /* Info.plist */,
+				CC000035CC000035CC000035 /* PrivacyInfo.xcprivacy */,
+				CC000037CC000037CC000037 /* SheetHead.entitlements */,
+				9706A35B45813D7886770A54 /* ShitHeadApp.swift */,
+				AA000007AA000007AA000007 /* Models */,
+				AA000018AA000018AA000018 /* Engine */,
+				AA000030AA000030AA000030 /* AI */,
+				AA000031AA000031AA000031 /* Persistence */,
+				AA000032AA000032AA000032 /* ViewModels */,
+				AA000033AA000033AA000033 /* Views */,
+				DD000030DD000030DD000030 /* Audio */,
+				DD000031DD000031DD000031 /* Preferences */,
+				BB000080BB000080BB000080 /* Resources */,
+				DD000032DD000032DD000032 /* Sounds */,
+				CC000002CC000002CC000002 /* Assets.xcassets */,
+			);
+			path = ShitHead;
 			sourceTree = "<group>";
 		};
 		F92244E22CFB9EE0306B3FF7 /* Products */ = {
@@ -191,6 +295,7 @@
 			buildConfigurationList = 402BCAC6169804D72DBCA0B5 /* Build configuration list for PBXNativeTarget "ShitHead" */;
 			buildPhases = (
 				37500800FD6ED870653CBF90 /* Sources */,
+				BB000090BB000090BB000090 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -209,8 +314,6 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1600;
-				TargetAttributes = {
-				};
 			};
 			buildConfigurationList = D2B1DC8C91F32DF13AC32446 /* Build configuration list for PBXProject "ShitHead" */;
 			compatibilityVersion = "Xcode 14.0";
@@ -229,6 +332,33 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BB000090BB000090BB000090 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC000010CC000010CC000010 /* ShipporiMincho-Bold.ttf in Resources */,
+				CC000012CC000012CC000012 /* ShipporiMincho-ExtraBold.ttf in Resources */,
+				CC000014CC000014CC000014 /* ZenKakuGothicNew-Regular.ttf in Resources */,
+				CC000016CC000016CC000016 /* ZenKakuGothicNew-Bold.ttf in Resources */,
+				CC000018CC000018CC000018 /* NotoSerifJP-Black.ttf in Resources */,
+				CC000001CC000001CC000001 /* Assets.xcassets in Resources */,
+				CC000034CC000034CC000034 /* PrivacyInfo.xcprivacy in Resources */,
+				DD000011DD000011DD000011 /* bgm_ambient.mp3 in Resources */,
+				DD000013DD000013DD000013 /* sfx_card_play.mp3 in Resources */,
+				DD000015DD000015DD000015 /* sfx_card_flip.mp3 in Resources */,
+				DD000017DD000017DD000017 /* sfx_card_pickup.mp3 in Resources */,
+				DD000019DD000019DD000019 /* sfx_burn.mp3 in Resources */,
+				DD000021DD000021DD000021 /* sfx_skip.mp3 in Resources */,
+				DD000023DD000023DD000023 /* sfx_reversal.mp3 in Resources */,
+				DD000025DD000025DD000025 /* sfx_shuffle.mp3 in Resources */,
+				DD000027DD000027DD000027 /* sfx_win.mp3 in Resources */,
+				DD000029DD000029DD000029 /* sfx_lose.mp3 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0C20930A7A5AF2D8E7D5AA07 /* Sources */ = {
@@ -262,6 +392,12 @@
 				AA000046AA000046AA000046 /* SetupView.swift in Sources */,
 				AA000048AA000048AA000048 /* GameView.swift in Sources */,
 				AA000050AA000050AA000050 /* GameOverView.swift in Sources */,
+				BB000060BB000060BB000060 /* DesignSystem.swift in Sources */,
+				CC000030CC000030CC000030 /* InstructionsView.swift in Sources */,
+				CC000032CC000032CC000032 /* SplashView.swift in Sources */,
+				DD000002DD000002DD000002 /* SoundManager.swift in Sources */,
+				DD000004DD000004DD000004 /* UserPreferences.swift in Sources */,
+				DD000006DD000006DD000006 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,13 +474,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DA2PC56WS5;
+				CODE_SIGN_ENTITLEMENTS = ShitHead/SheetHead.entitlements;
 				INFOPLIST_FILE = ShitHead/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.idancoh.shithead;
+				PRODUCT_BUNDLE_IDENTIFIER = com.idancoh.sheethead;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -425,7 +564,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.idancoh.shithead.tests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.idancoh.sheethead.tests;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ShitHead.app/ShitHead";
@@ -442,7 +581,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.idancoh.shithead.tests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.idancoh.sheethead.tests;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ShitHead.app/ShitHead";
@@ -453,13 +592,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DA2PC56WS5;
+				CODE_SIGN_ENTITLEMENTS = ShitHead/SheetHead.entitlements;
 				INFOPLIST_FILE = ShitHead/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.idancoh.shithead;
+				PRODUCT_BUNDLE_IDENTIFIER = com.idancoh.sheethead;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
