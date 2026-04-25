@@ -217,8 +217,8 @@ struct GameView: View {
                 if showPauseMenu { pauseMenuOverlay }
             }
             .ignoresSafeArea()
-            .coordinateSpace(name: "game")
-            .onChange(of: vm.flyingCards.count) { newCount in
+            .coordinateSpace(.named("game"))
+            .onChange(of: vm.flyingCards.count) { _, newCount in
                 if newCount > 0 {
                     flyAnimating = false
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.02) {
@@ -340,7 +340,7 @@ struct GameView: View {
                             let f = g.frame(in: .named("game"))
                             opponentCenter = CGPoint(x: f.midX, y: f.midY)
                         }
-                        .onChange(of: aiHand) { _ in
+                        .onChange(of: aiHand) { _, _ in
                             let f = g.frame(in: .named("game"))
                             opponentCenter = CGPoint(x: f.midX, y: f.midY)
                         }
@@ -453,7 +453,7 @@ struct GameView: View {
                             let f = g.frame(in: .named("game"))
                             discardPileCenter = CGPoint(x: f.midX, y: f.midY)
                         }
-                        .onChange(of: vm.gameState?.discardPile.count) { _ in
+                        .onChange(of: vm.gameState?.discardPile.count) { _, _ in
                             let f = g.frame(in: .named("game"))
                             discardPileCenter = CGPoint(x: f.midX, y: f.midY)
                         }
@@ -524,7 +524,7 @@ struct GameView: View {
                         let f = g.frame(in: .named("game"))
                         playerTableCenter = CGPoint(x: f.midX, y: f.midY)
                     }
-                    .onChange(of: tableActive) { _ in
+                    .onChange(of: tableActive) { _, _ in
                         let f = g.frame(in: .named("game"))
                         playerTableCenter = CGPoint(x: f.midX, y: f.midY)
                     }
@@ -548,7 +548,7 @@ struct GameView: View {
                                 let f = g.frame(in: .named("game"))
                                 playerHandCenter = CGPoint(x: f.midX, y: f.midY)
                             }
-                            .onChange(of: count) { _ in
+                            .onChange(of: count) { _, _ in
                                 let f = g.frame(in: .named("game"))
                                 playerHandCenter = CGPoint(x: f.midX, y: f.midY)
                             }
