@@ -73,6 +73,10 @@ final class SoundManager {
     }
 
     func setMusicEnabled(_ enabled: Bool) {
-        enabled ? musicPlayer?.play() : musicPlayer?.pause()
+        if enabled {
+            musicPlayer?.play()
+        } else {
+            musicPlayer?.pause()
+        }
     }
 }
