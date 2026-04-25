@@ -38,19 +38,6 @@
 		CC000016CC000016CC000016 /* ZenKakuGothicNew-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CC000017CC000017CC000017 /* ZenKakuGothicNew-Bold.ttf */; };
 		CC000018CC000018CC000018 /* NotoSerifJP-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CC000019CC000019CC000019 /* NotoSerifJP-Black.ttf */; };
 		CC000001CC000001CC000001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC000002CC000002CC000002 /* Assets.xcassets */; };
-		DD000002DD000002DD000002 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000001DD000001DD000001 /* SoundManager.swift */; };
-		DD000004DD000004DD000004 /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000003DD000003DD000003 /* UserPreferences.swift */; };
-		DD000006DD000006DD000006 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000005DD000005DD000005 /* SettingsView.swift */; };
-		DD000011DD000011DD000011 /* bgm_ambient.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DD000010DD000010DD000010 /* bgm_ambient.mp3 */; };
-		DD000013DD000013DD000013 /* sfx_card_play.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DD000012DD000012DD000012 /* sfx_card_play.mp3 */; };
-		DD000015DD000015DD000015 /* sfx_card_flip.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DD000014DD000014DD000014 /* sfx_card_flip.mp3 */; };
-		DD000017DD000017DD000017 /* sfx_card_pickup.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DD000016DD000016DD000016 /* sfx_card_pickup.mp3 */; };
-		DD000019DD000019DD000019 /* sfx_burn.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DD000018DD000018DD000018 /* sfx_burn.mp3 */; };
-		DD000021DD000021DD000021 /* sfx_skip.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DD000020DD000020DD000020 /* sfx_skip.mp3 */; };
-		DD000023DD000023DD000023 /* sfx_reversal.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DD000022DD000022DD000022 /* sfx_reversal.mp3 */; };
-		DD000025DD000025DD000025 /* sfx_shuffle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DD000024DD000024DD000024 /* sfx_shuffle.mp3 */; };
-		DD000027DD000027DD000027 /* sfx_win.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DD000026DD000026DD000026 /* sfx_win.mp3 */; };
-		DD000029DD000029DD000029 /* sfx_lose.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DD000028DD000028DD000028 /* sfx_lose.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,19 +85,6 @@
 		CC000019CC000019CC000019 /* NotoSerifJP-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSerifJP-Black.ttf"; sourceTree = "<group>"; };
 		CC000002CC000002CC000002 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D13D3E0C41EAA7F7C54D9E5A /* ShitHeadTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = ShitHeadTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DD000001DD000001DD000001 /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
-		DD000003DD000003DD000003 /* UserPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferences.swift; sourceTree = "<group>"; };
-		DD000005DD000005DD000005 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		DD000010DD000010DD000010 /* bgm_ambient.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgm_ambient.mp3; sourceTree = "<group>"; };
-		DD000012DD000012DD000012 /* sfx_card_play.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sfx_card_play.mp3; sourceTree = "<group>"; };
-		DD000014DD000014DD000014 /* sfx_card_flip.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sfx_card_flip.mp3; sourceTree = "<group>"; };
-		DD000016DD000016DD000016 /* sfx_card_pickup.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sfx_card_pickup.mp3; sourceTree = "<group>"; };
-		DD000018DD000018DD000018 /* sfx_burn.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sfx_burn.mp3; sourceTree = "<group>"; };
-		DD000020DD000020DD000020 /* sfx_skip.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sfx_skip.mp3; sourceTree = "<group>"; };
-		DD000022DD000022DD000022 /* sfx_reversal.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sfx_reversal.mp3; sourceTree = "<group>"; };
-		DD000024DD000024DD000024 /* sfx_shuffle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sfx_shuffle.mp3; sourceTree = "<group>"; };
-		DD000026DD000026DD000026 /* sfx_win.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sfx_win.mp3; sourceTree = "<group>"; };
-		DD000028DD000028DD000028 /* sfx_lose.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sfx_lose.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -190,42 +164,8 @@
 				BB000061BB000061BB000061 /* DesignSystem.swift */,
 				CC000031CC000031CC000031 /* InstructionsView.swift */,
 				CC000033CC000033CC000033 /* SplashView.swift */,
-				DD000005DD000005DD000005 /* SettingsView.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		DD000030DD000030DD000030 /* Audio */ = {
-			isa = PBXGroup;
-			children = (
-				DD000001DD000001DD000001 /* SoundManager.swift */,
-			);
-			path = Audio;
-			sourceTree = "<group>";
-		};
-		DD000031DD000031DD000031 /* Preferences */ = {
-			isa = PBXGroup;
-			children = (
-				DD000003DD000003DD000003 /* UserPreferences.swift */,
-			);
-			path = Preferences;
-			sourceTree = "<group>";
-		};
-		DD000032DD000032DD000032 /* Sounds */ = {
-			isa = PBXGroup;
-			children = (
-				DD000010DD000010DD000010 /* bgm_ambient.mp3 */,
-				DD000012DD000012DD000012 /* sfx_card_play.mp3 */,
-				DD000014DD000014DD000014 /* sfx_card_flip.mp3 */,
-				DD000016DD000016DD000016 /* sfx_card_pickup.mp3 */,
-				DD000018DD000018DD000018 /* sfx_burn.mp3 */,
-				DD000020DD000020DD000020 /* sfx_skip.mp3 */,
-				DD000022DD000022DD000022 /* sfx_reversal.mp3 */,
-				DD000024DD000024DD000024 /* sfx_shuffle.mp3 */,
-				DD000026DD000026DD000026 /* sfx_win.mp3 */,
-				DD000028DD000028DD000028 /* sfx_lose.mp3 */,
-			);
-			path = Sounds;
 			sourceTree = "<group>";
 		};
 		BB000080BB000080BB000080 /* Resources */ = {
@@ -253,10 +193,7 @@
 				AA000031AA000031AA000031 /* Persistence */,
 				AA000032AA000032AA000032 /* ViewModels */,
 				AA000033AA000033AA000033 /* Views */,
-				DD000030DD000030DD000030 /* Audio */,
-				DD000031DD000031DD000031 /* Preferences */,
 				BB000080BB000080BB000080 /* Resources */,
-				DD000032DD000032DD000032 /* Sounds */,
 				CC000002CC000002CC000002 /* Assets.xcassets */,
 			);
 			path = ShitHead;
@@ -345,16 +282,6 @@
 				CC000018CC000018CC000018 /* NotoSerifJP-Black.ttf in Resources */,
 				CC000001CC000001CC000001 /* Assets.xcassets in Resources */,
 				CC000034CC000034CC000034 /* PrivacyInfo.xcprivacy in Resources */,
-				DD000011DD000011DD000011 /* bgm_ambient.mp3 in Resources */,
-				DD000013DD000013DD000013 /* sfx_card_play.mp3 in Resources */,
-				DD000015DD000015DD000015 /* sfx_card_flip.mp3 in Resources */,
-				DD000017DD000017DD000017 /* sfx_card_pickup.mp3 in Resources */,
-				DD000019DD000019DD000019 /* sfx_burn.mp3 in Resources */,
-				DD000021DD000021DD000021 /* sfx_skip.mp3 in Resources */,
-				DD000023DD000023DD000023 /* sfx_reversal.mp3 in Resources */,
-				DD000025DD000025DD000025 /* sfx_shuffle.mp3 in Resources */,
-				DD000027DD000027DD000027 /* sfx_win.mp3 in Resources */,
-				DD000029DD000029DD000029 /* sfx_lose.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,9 +322,6 @@
 				BB000060BB000060BB000060 /* DesignSystem.swift in Sources */,
 				CC000030CC000030CC000030 /* InstructionsView.swift in Sources */,
 				CC000032CC000032CC000032 /* SplashView.swift in Sources */,
-				DD000002DD000002DD000002 /* SoundManager.swift in Sources */,
-				DD000004DD000004DD000004 /* UserPreferences.swift in Sources */,
-				DD000006DD000006DD000006 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

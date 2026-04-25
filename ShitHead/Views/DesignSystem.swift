@@ -109,11 +109,10 @@ extension Animation {
 // MARK: - Haptic Manager
 
 enum Haptics {
-    private static var enabled: Bool { UserPreferences.shared.hapticsEnabled }
-    static func light()   { guard enabled else { return }; UIImpactFeedbackGenerator(style: .light).impactOccurred() }
-    static func medium()  { guard enabled else { return }; UIImpactFeedbackGenerator(style: .medium).impactOccurred() }
-    static func heavy()   { guard enabled else { return }; UIImpactFeedbackGenerator(style: .heavy).impactOccurred() }
-    static func rigid()   { guard enabled else { return }; UIImpactFeedbackGenerator(style: .rigid).impactOccurred() }
-    static func error()   { guard enabled else { return }; UINotificationFeedbackGenerator().notificationOccurred(.error) }
-    static func success() { guard enabled else { return }; UINotificationFeedbackGenerator().notificationOccurred(.success) }
+    static func light()   { UIImpactFeedbackGenerator(style: .light).impactOccurred() }
+    static func medium()  { UIImpactFeedbackGenerator(style: .medium).impactOccurred() }
+    static func heavy()   { UIImpactFeedbackGenerator(style: .heavy).impactOccurred() }
+    static func rigid()   { UIImpactFeedbackGenerator(style: .rigid).impactOccurred() }
+    static func error()   { UINotificationFeedbackGenerator().notificationOccurred(.error) }
+    static func success() { UINotificationFeedbackGenerator().notificationOccurred(.success) }
 }

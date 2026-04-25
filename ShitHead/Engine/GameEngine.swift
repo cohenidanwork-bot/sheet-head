@@ -48,12 +48,6 @@ enum GameEngine {
         let remaining = state.human.hand.filter { !faceUpCards.contains($0) }
         s.human.faceUp = faceUpCards
         s.human.hand = remaining
-
-        let humanMin = s.human.hand.map(\.rank).min()
-        let aiMin = s.ai.hand.map(\.rank).min()
-        if let h = humanMin, let a = aiMin {
-            s.currentTurn = h <= a ? .human : .ai
-        }
         return s
     }
 
